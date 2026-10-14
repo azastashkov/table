@@ -24,6 +24,10 @@ A 3D model of a solid-oak dining table, built from a hand sketch and photos of t
 | `textures/tabletop_oak.png` | Tabletop texture, rectified from photo `2.jpg` |
 | `textures/leg_oak.png` | Seamless leg grain, from the close-up `5.jpg`, colour-matched to `3.jpg` |
 | `preview.png` | Cycles render from the scene camera |
+| `drawings/table_drawing.pdf` | Workshop drawing for the carpenter: front, side and top views with mm dimensions and parts list (A3, 1:10) |
+| `drawings/table_drawing_ru.pdf` | The same drawing in Russian |
+| `drawings/table_drawing*.svg`, `*.png` | Editable vector and screen versions of the drawings |
+| `drawings/make_drawing.py` | Generates the drawing SVGs (`en` or `ru`) |
 | `1.jpg` | Dimensioned sketch |
 | `2.jpg` – `6.jpg` | Reference photos of the real table |
 
@@ -31,6 +35,13 @@ A 3D model of a solid-oak dining table, built from a hand sketch and photos of t
 
 ```sh
 blender --background --python build_table.py
+```
+
+Regenerate the drawings (then print the SVG to an A3 PDF):
+
+```sh
+python3 drawings/make_drawing.py en
+python3 drawings/make_drawing.py ru
 ```
 
 Render a preview:
